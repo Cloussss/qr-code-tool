@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Code Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Tool</h1>
+
+    <!-- Tabs -->
+    <div class="tab-controls">
+      <button id="generate-tab" onclick="showTab('generate')" class="active">Generate</button>
+      <button id="scan-tab" onclick="showTab('scan')">Scan</button>
+    </div>
+
+    <!-- Generate Section -->
+    <div id="generate-section">
+      <input type="text" id="qr-text" placeholder="Enter text or URL" />
+      <button id="generate-btn" onclick="generateQRCode()">Generate</button>
+      <div id="qr-result"></div>
+      <button id="download-btn" class="hidden" onclick="downloadQR()">Download</button>
+      <button id="reset-btn" class="hidden" onclick="resetQR()">Reset</button>
+    </div>
+
+    <!-- Scan Section -->
+    <div id="scan-section" class="hidden">
+      <div id="reader"></div> <!-- Video appears here -->
+      <p>Result: <span id="scanned-result"></span></p>
+
+      <!-- Scanner Controls -->
+      <div id="scan-controls" class="hidden">
+        <button id="torch-btn" class="hidden" onclick="toggleTorch()">Turn Torch On</button>
+        <button onclick="switchCamera()">Switch Camera</button>
+        <button id="copy-btn" class="hidden" onclick="copyScannedText()">Copy Result</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Libraries -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <script src="script.js"></script>
+</body>
+</html>
