@@ -1,0 +1,145 @@
+/* Basic Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Container Styling */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs Styling */
+.tab-controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-controls button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.tab-controls button.active {
+  background-color: #4285f4;
+  color: white;
+}
+
+/* Section Styling */
+.section {
+  margin: 30px 0;
+}
+
+/* Input Field */
+input[type="text"] {
+  padding: 10px;
+  width: 90%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  margin: 5px;
+  background-color: #4285f4;
+  color: white;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+/* Unified hidden class */
+.hidden {
+  display: none !important;
+}
+
+/* Utility: Centering */
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .tab-controls button,
+  button,
+  input[type="text"] {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+/* QR Code Reader View */
+#reader {
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  height: 300px; /* ensures proper camera display */
+  position: relative;
+  z-index: 1;
+  /* Removing pointer-events:none to keep flexibility */
+}
+
+/* Remove unwanted styles from html5-qrcode */
+.html5-qrcode {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+#qr-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#reader video {
+  width: 150%;
+  height: auto;
+  max-height: 300px; /* or any suitable height */
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* Controls above video */
+#scan-controls {
+  position: relative;
+  z-index: 10; /* higher than video */
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  pointer-events: auto; /* enable pointer events on buttons */
+}
